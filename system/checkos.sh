@@ -2,15 +2,15 @@
 
 # Check operating system
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    os="linux"
+    os="Linux"
 elif [[ "$OSTYPE" == "darwin"* ]]; then
-    os="macos"
+    os="macOS"
 elif [[ "$OSTYPE" == "cygwin" ]]; then
-    os="windows"
+    os="Windows"
 elif [[ "$OSTYPE" == "msys" ]]; then
-    os="windows"
+    os="Windows"
 else
-    os="unknown"
+    os="Unknown"
 fi
 
 echo $os
