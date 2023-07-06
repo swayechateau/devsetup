@@ -49,7 +49,7 @@ check_package_man() {
     elif command -v choco > /dev/null; then
         pkg_manager="chocolatey"
     else
-        pkg_manager=null
+        return 0
     fi
 
     echo $pkg_manager
@@ -138,28 +138,29 @@ get_pkg_man() {
         return null
     fi
 }
+install_homebrew() {
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> $HOME/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+}
 
-# get_pkg_man_install_cmd() {
-
-#     if [[ $pkg_manager == "chocolatey" ]]; then
-#     install_with_choco "$program"
-#     elif [[ $pkg_manager == "homebrew" ]]; then
-#         install_with_brew "$program"
-#     elif [[ $pkg_manager == "apt-get" ]]; then
-#         install_with_apt "$program"
-#     elif [[ $pkg_manager == "pacman" ]]; then
-#         install_with_pacman "$program"
-#     elif [[ $pkg_manager == "dnf" ]]; then
-#         install_with_dnf "$program"
-#     elif [[ $pkg_manager == "yum" ]]; then
-#         install_with_yum "$program"
-#     elif [[ $pkg_manager == "zypper" ]]; then
-#         install_with_zypper "$program"
-#     else
-#         echo -e "${textred}No package manager found.${textreset}"
-#         exit 1
-#     fi
-# }
+install_package_manager() {
+  # if os is windows and pkg is null then install choco
+  if [[ $os == "Windows" ]]; then
+    echo "No package manager detected. Installing Chocolatey."
+    ./system/chocoinstall.sh
+  fi
+  # if os is mac and pkg is null then install brew
+  if [[ $os == "macOS" ]]; then
+    echo "No package manager detected. Installing Homebrew."
+    install_homebrew
+  fi
+  # if os is linux and pkg is null then install brew
+  if [[ $os == "Linux" ]]; then
+    echo "No package manager detected. Installing Homebrew."
+    install_homebrew
+  fi
+}
 
 pkg_man_install() {
     pkg_man=$(get_pkg_man)
@@ -226,29 +227,4 @@ open_url() {
 add_nerd_font() {
     local font=$1
     brew install --cask "font-$font-nerd-font"
-}
-
-add_line_to_file() {
-  local filename=$1
-  local line=$2
-
-  # Create a temporary file
-  local temp_file=$(mktemp)
-
-  # Check if the line exists in the file
-  if grep -Fxq "$line" "$filename"; then
-    echo "Line already exists in '$filename'."
-    return
-  fi
-
-  # Copy the file to the temporary file, excluding the line if it exists
-  awk '!/^eval \$\(\/opt\/homebrew\/bin\/brew shellenv\)$/' "$filename" > "$temp_file"
-
-  # Append the line to the temporary file
-  echo "$line" >> "$temp_file"
-
-  # Replace the original file with the temporary file
-  mv "$filename" "$filename.bk"
-  mv "$temp_file" "$filename"
-  echo "Line added to '$filename' successfully."
 }
