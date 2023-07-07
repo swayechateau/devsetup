@@ -144,11 +144,16 @@ install_homebrew() {
     eval "$(/opt/homebrew/bin/brew shellenv)"
 }
 
+install_chocolatey() {
+    echo "Installing Chocolatey"
+    powershell -Command "Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))"
+}
+
 install_package_manager() {
   # if os is windows and pkg is null then install choco
   if [[ $os == "Windows" ]]; then
     echo "No package manager detected. Installing Chocolatey."
-    ./system/chocoinstall.sh
+    install_chocolatey
   fi
   # if os is mac and pkg is null then install brew
   if [[ $os == "macOS" ]]; then
