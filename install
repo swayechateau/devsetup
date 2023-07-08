@@ -43,8 +43,24 @@ if [[ "$os" == "MacOS" ]]; then
 
   read -p "Do you want to install rectangle? [Y/n] " answer
   if answer_default_y "$answer"; then
-    brew install --cask rectangle
+    brew install rectangle
   fi
+fi
+
+# Install shell
+read -p "Do you want to install an additional shell? [Y/n] " answer
+if answer_default_y "$answer"; then
+    read -p "Do you want to install the fish shell? [Y/n] " answer
+    if answer_default_y "$answer"; then
+        echo "Installing fish..."
+        pkg_man_install fish
+    fi
+
+    read -p "Do you want to install the zsh shell? [Y/n] " answer
+    if answer_default_y "$answer"; then
+        echo "Installing zsh..."
+        pkg_man_install zsh
+    fi
 fi
 
 # Install Cross Platform Apps Last

@@ -1,6 +1,19 @@
 # Development Enviroment Setup
 
-Repo to store all scripts to setup development environment
+Repo to store all scripts to setup development environments I use, as this is open source, feel free to use if any of the scripts help
+
+Currently the client systems I use are:
+
+- Windows 10/11
+- Mac Os
+- Fedora
+- Debian
+- Arch
+
+Considering adding Server scripts for
+
+- Rocky OS (Centos Successor)
+
 
 ## Current apps to install
 
@@ -11,8 +24,11 @@ Repo to store all scripts to setup development environment
 
 ### Windows Only
 
+- chocolatey
+
 ### Linux Only
 
+- sudo (arch)
 - docker && docker-compose (cli tool)
 
 ### Shell
