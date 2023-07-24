@@ -1,24 +1,24 @@
-# Development Enviroment Setup (Tranquility)
+# Tranquility (Development Enviroment Setup)
 
 TODO:
 - Rename repo to Tranquility
 - Create Documentation on how to use scripts or cli executable and project structure
 - Create system specific scripts
+  
+## Introduction
 
-Repo to store all scripts to setup development environments I use, as this is open source, feel free to use if any of the scripts help
+One of the pain points when getting a new system or having to rebuild an old system for development, is getting the enviroment set up just right!
 
-Currently the client systems I use are:
+Tranquility as it's name suggests is a project to give you peace of mind to automate the dev setup process, by storing scripts to install common development tools most (if not all) environments use. Feel free to use any of the scripts help should they be of use to you, no need to credit, just use 😉
+
+Currently the project is focused on the client/server systems I use:
 
 - Windows 10/11
 - Mac Os
 - Fedora
 - Debian
 - Arch
-
-Considering adding Server scripts for
-
 - Rocky OS (Centos Successor)
-
 
 ## Current apps to install
 
