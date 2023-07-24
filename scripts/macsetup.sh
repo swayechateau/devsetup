@@ -183,6 +183,7 @@ if answer_default_y "$answer"; then
     read -p "Do you want to install docker desktop? [Y/n] " answer
     if answer_default_y "$answer"; then
         brew install --cask docker
+        brew install orbstack
     fi
     read -p "Do you want to install github desktop? [Y/n] " answer
     if answer_default_y "$answer"; then
