@@ -1,4 +1,4 @@
-# Development Enviroment Setup
+# Development Enviroment Setup (Tranquility)
 
 Repo to store all scripts to setup development environments I use, as this is open source, feel free to use if any of the scripts help
 

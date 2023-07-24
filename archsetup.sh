@@ -7,3 +7,5 @@ install_yay
 
 sudo systemctl start gdm
 sudo systemctl enable gdm4r
+
+sudo pacman -S gnome-tweaks
