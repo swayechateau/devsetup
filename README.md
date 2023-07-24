@@ -1,5 +1,10 @@
 # Development Enviroment Setup (Tranquility)
 
+TODO:
+- Rename repo to Tranquility
+- Create Documentation on how to use scripts or cli executable and project structure
+- Create system specific scripts
+
 Repo to store all scripts to setup development environments I use, as this is open source, feel free to use if any of the scripts help
 
 Currently the client systems I use are:
