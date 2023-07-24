@@ -1,7 +1,7 @@
 # Tranquility (Development Enviroment Setup)
 
 TODO:
-- Rename repo to Tranquility
+- Create Rust CLI executable (cross platform)
 - Create Documentation on how to use scripts or cli executable and project structure
 - Create system specific scripts
   
