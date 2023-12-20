@@ -26,10 +26,12 @@ Currently the project is focused on the client/server systems I use:
 
 - xcode commandline tools (cli tool)
 - xcode (App Store)
+- orbstack
 
 ### Windows Only
 
 - chocolatey
+- winget
 
 ### Linux Only
 
@@ -41,6 +43,15 @@ Currently the project is focused on the client/server systems I use:
 - zsh
 - fish
 
+### Shell plugins
+
+- oh-my-zsh
+- powerlevel 10K
+
+### Fonts
+
+- Fira Code Nerd Fonts
+
 ### CLI Tools
 
 - git
@@ -50,19 +61,21 @@ Currently the project is focused on the client/server systems I use:
 - terraform
 - aws
 - deno
+- bun.js
 - node.js
+- hugo
 - yarn
 - jq
 
-## Languages
+## Language SDKs
 
-- go
-- .netcore
+- golang (GO)
+- .netcore (C#)
 - elixir
-- nodejs
+- node.js
 - python
 - rust
-- php?
+- php
 - ruby
 
 ### Editors and IDEs
@@ -87,10 +100,11 @@ Currently the project is focused on the client/server systems I use:
 ### Browsers
 
 - brave browser
-- opera / opera gx
+- opera / opera developer / opera gx
 - vivaldi
 - tor browser
 - chrome
+- thorium
 - edge
 - firefox
 - polypane
@@ -98,6 +112,8 @@ Currently the project is focused on the client/server systems I use:
 ### Virtualisation
 
 - virtual box
+- qemu
+- vm player / fusion (Mac Only)
 - vagrant
 - paralles (Mac Only)
 
@@ -105,6 +121,7 @@ Currently the project is focused on the client/server systems I use:
 
 - slack
 - discord
+- signal
 - telegram-desktop
 - line
 - wechat
@@ -146,10 +163,12 @@ Currently the project is focused on the client/server systems I use:
 
 - surfshark
 - openVPN
+- wireguard
 
 ### REST Client Tools
 
 - insomnia
+- apidog
 - postman
 
 ### Download Managers
